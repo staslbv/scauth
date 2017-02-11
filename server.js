@@ -84,9 +84,17 @@ app.post('/login/account/:type',function(req,res){
 
 
 
+db.sequelize.sync({force: true})
+.then(function(e){
+    app.listen(PORT, function(success){
+        console.log('app listening on port: ' + PORT);
+    });
+})
+.catch(function(e){
 
+});
 
-
+/*
 db.sequelize.authenticate()
 .then(function(e){
 	return db.sequelize.sync({force: db.FORCE_INIT});
@@ -99,3 +107,5 @@ db.sequelize.authenticate()
 .catch(function(e){
 	console.log('connection error ..' + e);
 })
+
+*/
