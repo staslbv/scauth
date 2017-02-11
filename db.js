@@ -4,6 +4,7 @@ var Sequelize               = require('sequelize');
 
 var DATABESE_NAME           = "scuser";
 
+/*
 var sequelize = new Sequelize(
 	DATABESE_NAME, "scnull@q631ozbdob","Osafe1341",{
 		 "dialect": "mssql",
@@ -13,6 +14,12 @@ var sequelize = new Sequelize(
 		 	"encrypt": true,
 		 	"loginTimeout": 30
 		 }
+	});
+*/
+sequelize = new Sequelize(undefined,undefined,undefined,{
+		"dialect": "sqlite",
+		"storage": __dirname + "/basic-sqlite-database.sqlite"
+
 	});
 
 
